@@ -1,0 +1,13 @@
+.group-hover-expand .text-expand {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width 0.5s ease-out;
+    opacity: 0;
+    transition: opacity 0.2s, width 0.5s ease-out; /* Combining both transitions */
+}
+
+.group:hover .text-expand {
+    width: auto; /* Expanding width on hover */
+    opacity: 1; /* Fully visible on hover */
+}
