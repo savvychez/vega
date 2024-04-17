@@ -6,8 +6,6 @@ import { SelectOption } from "./MultiSelect";
 import { Input } from "@/components/ui/input"
 import { useForm } from "react-hook-form"
 import ReactLoading from 'react-loading';
-import { getApplicationData, updateApplicationData } from "@/lib/wrappers/onboarding";
-import { Inputs } from "./BusinessApplication";
 import 'react-international-phone/style.css';
 import { CountryIso2, CountrySelector, DialCodePreview, ParsedCountry, PhoneInput } from 'react-international-phone';
 
