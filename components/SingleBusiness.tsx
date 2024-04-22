@@ -1,9 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 import ProfileRow from './Profile';
+import Salon2 from './assets/salon2.jpeg'
+import Salon3 from './assets/salon3.jpeg'
 
 interface Props {
     name: string;
+    url: string;
     description: string;
     end: number;
     start: number;
@@ -20,14 +23,14 @@ const images = [
 
 const SingleBusiness: React.FC<Props> = (props) => {
     return (
-        <div className='flex items-center'>
-            <div className='mt-4' style={{ position: 'relative', width: 260, height: 130 }}>
+        <div className='flex items-center pb-4  rounded-3xl'>
+            <div className='mt-4 min-w-52 w' style={{ position: 'relative', width: 260, height: 130 }}>
                 <Image
-                    src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hair_Salon_Stations.jpg"
+                    src={props.url == "A" ? Salon2 : props.url == "B" ? Salon3 : props.url}
                     alt="A salon"
                     layout='fill'
                     objectFit='cover'
-                    className='rounded-2xl'
+                    className='rounded-2xl '
                 />
             </div>
             <div className="text ml-6">
@@ -42,7 +45,7 @@ const SingleBusiness: React.FC<Props> = (props) => {
                             const hour = Math.floor((props.start + i * 0.5));
                             const minutes = ((props.start + i * 0.5) % 1) * 60 === 0 ? '00' : '30';
                             return (
-                                <button key={i} className="time-button bg-white rounded-xl mr-2 shadow-sm border border-zinc-100 py-1 px-4 font-semibold text-zinc-700">
+                                <button key={i} className="time-button bg-white hover:bg-zinc-100 rounded-xl mr-2 shadow-sm border border-zinc-100 py-1 px-4 font-semibold text-zinc-700">
                                     {`${hour}:${minutes} pm`}
                                 </button>
                             );

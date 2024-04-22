@@ -17,11 +17,12 @@ const ProfileRow: React.FC<ProfileRowProps> = ({ images }) => {
 
     return (
         <div 
-            className='bg-white/30 rounded-3xl p-1 border border-slate-100 flex items-center transition-all duration-200'
+            className=' rounded-3xl p-1 border border-slate-100 flex items-center transition-all duration-200'
             style={{ 
                 width: 'auto', 
                 maxWidth: '100%', 
-                minWidth: '35px' 
+                minWidth: '35px',
+                background: isHovered ? "rgba(255, 255, 255, 0.5)" : "transparent",
             }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
